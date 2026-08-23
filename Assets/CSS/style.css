@@ -127,21 +127,6 @@ body {
 }
 
 
-/* ================= PROFILE PHOTO ================= */
-
-.hero-image {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    background-image: url('../img/profile.jpeg');
-    background-size: cover;
-    background-position: center;
-    border: 5px solid #fff;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-    flex-shrink: 0;
-}
-
-
 /* ================= SECTIONS ================= */
 
 section {
