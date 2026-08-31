@@ -1,29 +1,33 @@
 ```javascript
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", function () {
 
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const cards = document.querySelectorAll('.card');
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const projectCards = document.querySelectorAll(".card");
 
-    filterButtons.forEach(btn => {
+    filterButtons.forEach(function (button) {
 
-        btn.addEventListener('click', () => {
+        button.addEventListener("click", function () {
 
-            filterButtons.forEach(b => {
-                b.classList.remove('active');
+            // Remove active class from all buttons
+            filterButtons.forEach(function (btn) {
+                btn.classList.remove("active");
             });
 
-            btn.classList.add('active');
+            // Add active class to clicked button
+            button.classList.add("active");
 
-            const filter = btn.dataset.filter;
+            // Get selected category
+            const selectedFilter = button.getAttribute("data-filter");
 
-            cards.forEach(card => {
+            // Show/hide projects
+            projectCards.forEach(function (card) {
 
-                const category = card.dataset.category;
+                const category = card.getAttribute("data-category");
 
-                if (filter === 'all' || filter === category) {
-                    card.style.display = 'flex';
+                if (selectedFilter === "all" || category === selectedFilter) {
+                    card.style.display = "flex";
                 } else {
-                    card.style.display = 'none';
+                    card.style.display = "none";
                 }
 
             });
@@ -33,10 +37,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    const yearSpan = document.getElementById('year');
+    // Footer year
+    const year = document.getElementById("year");
 
-    if (yearSpan) {
-        yearSpan.textContent = new Date().getFullYear();
+    if (year) {
+        year.textContent = new Date().getFullYear();
     }
 
 });
