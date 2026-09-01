@@ -1,4 +1,3 @@
-```javascript
 document.addEventListener("DOMContentLoaded", function () {
 
     const filterButtons = document.querySelectorAll(".filter-btn");
@@ -14,18 +13,18 @@ document.addEventListener("DOMContentLoaded", function () {
             });
 
             // Add active class to clicked button
-            button.classList.add("active");
+            this.classList.add("active");
 
             // Get selected category
-            const selectedFilter = button.getAttribute("data-filter");
+            const selectedFilter = this.getAttribute("data-filter");
 
-            // Show/hide projects
+            // Show / hide project cards
             projectCards.forEach(function (card) {
 
                 const category = card.getAttribute("data-category");
 
                 if (selectedFilter === "all" || category === selectedFilter) {
-                    card.style.display = "flex";
+                    card.style.display = "";
                 } else {
                     card.style.display = "none";
                 }
@@ -45,4 +44,3 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 });
-```
